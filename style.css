@@ -162,7 +162,7 @@ header {
 }
 
 .primary-btn {
-    background-color: var(--light-color);
+    background-color:lightgreen;
     color: #006064; /* Yazı rengi koyu turkuaz olsun okunsun */
     box-shadow: 0 4px 0 #0097A7;
 }
