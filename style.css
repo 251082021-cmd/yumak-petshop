@@ -788,3 +788,40 @@ footer {
     
     .blog-header h1 { font-size: 1.8rem; }
 }
+
+.getir-float-btn {
+    position: fixed;
+    bottom: 105px; /* Chat butonunun (65px) + boşluğun (40px) üstünde dursun */
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background-color: #5D3EBC; /* Getir Moru */
+    color: #FFD300; /* Getir Sarısı */
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1999; /* Chatbot'un (2000) bir tık altında */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #FFD300;
+}
+
+.getir-float-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+}
+
+.getir-float-btn span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.getir-float-btn:hover {
+    transform: scale(1.1); /* Üzerine gelince büyüsün */
+    background-color: #4c3299;
+}
