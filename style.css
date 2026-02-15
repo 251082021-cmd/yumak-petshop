@@ -1,14 +1,13 @@
-/* --- GENEL AYARLAR VE DEĞİŞKENLER --- */
+/* --- GENEL AYARLAR VE DEĞİŞKENLER (TURKUAZ TEMA) --- */
 :root {
-    /* Renk Paleti - Motor ve Petshop uyumlu */
-    --primary-green: #2e7d32;   
-    --light-green: #4caf50;     
-    --dark-brown: #3e2723;      
-    --light-brown: #8d6e63;     
-    --bg-color: #f1f8e9;        
+    /* Renk Paleti - Turkuaz Mavi Konsept */
+    --primary-color: #0097A7;   /* Ana Renk: Tok bir Turkuaz */
+    --light-color: #4DD0E1;     /* Açık Renk: Canlı Açık Mavi/Turkuaz */
+    --dark-accent: #37474F;     /* Koyu Renk: Koyu Gri/Mavi (Eski kahverengi yerine) */
+    --soft-bg: #E0F7FA;         /* Arka Plan: Çok uçuk mavi */
     --white: #ffffff;
-    --text-color: #212121;      
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --text-color: #263238;      /* Yazı Rengi: Koyu mavi-gri */
+    --shadow: 0 4px 15px rgba(0, 151, 167, 0.25); /* Gölgeler hafif turkuaz tonlu */
 }
 
 * {
@@ -21,7 +20,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--soft-bg);
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -32,14 +31,14 @@ ul { list-style: none; }
 
 /* --- HEADER --- */
 header {
-    background-color: rgb(41, 158, 41); /* Senin ayarladığın renk */
+    background-color: var(--primary-color); /* Artık Turkuaz */
     color: var(--white);
     padding: 0.5rem 0; 
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .navbar {
@@ -63,15 +62,15 @@ header {
 
 /* Aktif Menü Linki Stili */
 .nav-links a.active {
-    color: #ffffff; /* Yazı rengi tam beyaz olsun */
-    border-bottom: 2px solid #ffffff; /* Altına beyaz çizgi */
-    padding-bottom: 5px; /* Çizgi ile yazı arasına biraz boşluk */
-    font-weight: bold; /* Yazı biraz daha kalın olsun */
+    color: #ffffff; 
+    border-bottom: 2px solid #ffffff; 
+    padding-bottom: 5px; 
+    font-weight: bold; 
 }
 
 /* Logo görseli için ayarlar */
 .logo-img {
-    height: 100px; /* Senin ayarladığın boyut */
+    height: 100px; 
     width: auto;  
     object-fit: contain; 
 }
@@ -84,10 +83,12 @@ header {
 .nav-links a {
     font-weight: 500;
     transition: color 0.3s;
+    opacity: 0.9;
 }
 
 .nav-links a:hover {
-    color: var(--light-green); /* Hover rengi açık yeşil kalabilir veya white yapılabilir */
+    color: #B2EBF2; /* Hoverda çok açık turkuaz */
+    opacity: 1;
 }
 
 /* Mobil Menü İkonu */
@@ -104,7 +105,7 @@ header {
     margin-top: 60px;
     height: 85vh;
     position: relative;
-    background: url('tabela1.png'); /* Senin görselin */
+    background: url('tabela.png'); /* Senin görselin */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -121,25 +122,25 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 60, 70, 0.4); /* Siyah yerine hafif lacivert filtre */
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     max-width: 700px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    border-bottom: 3px solid var(--light-green);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    border-bottom: 3px solid var(--light-color);
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -161,15 +162,16 @@ header {
 }
 
 .primary-btn {
-    background-color: var(--light-green);
-    color: var(--white);
-    box-shadow: 0 4px 0 #388e3c;
+    background-color: var(--light-color);
+    color: #006064; /* Yazı rengi koyu turkuaz olsun okunsun */
+    box-shadow: 0 4px 0 #0097A7;
 }
 
 .primary-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 0 #388e3c;
-    background-color: #66bb6a;
+    box-shadow: 0 6px 0 #00838F;
+    background-color: #26C6DA;
+    color: #fff;
 }
 
 /* --- SCROLL ANİMASYONU (REVEAL) --- */
@@ -192,11 +194,11 @@ header {
 .section-title {
     text-align: center;
     font-size: 2.2rem;
-    color: var(--dark-brown);
+    color: var(--dark-accent);
     margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 2px solid var(--light-green);
+    border-bottom: 2px solid var(--light-color);
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -210,7 +212,8 @@ header {
 
 /* --- ÖZEL: ÜRÜNLER BÖLÜMÜ ARKA PLANI --- */
 #products {
-    background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(46, 125, 50, 0.7));
+    /* Yeşil gradyan yerine Turkuaz gradyan */
+    background: linear-gradient(rgba(0, 151, 167, 0.8), rgba(0, 96, 100, 0.8));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -236,7 +239,7 @@ header {
     background: var(--white);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 151, 167, 0.15);
     transition: transform 0.3s;
     border: none;
 }
@@ -267,21 +270,21 @@ header {
 }
 
 .card-content h3 {
-    color: var(--primary-green);
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
 /* --- FOOTER --- */
 footer {
-    background-color: var(--dark-brown);
-    color: #d7ccc8;
+    background-color: var(--dark-accent); /* Koyu Lacivert/Gri */
+    color: #B0BEC5;
     padding: 3rem 1rem 1rem 1rem;
     text-align: center;
-    border-top: 5px solid var(--light-green);
+    border-top: 5px solid var(--light-color);
 }
 
 .footer-content h3 {
-    color: var(--light-green);
+    color: var(--light-color);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -294,7 +297,7 @@ footer {
 .copyright {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #5d4037;
+    border-top: 1px solid #546E7A;
     font-size: 0.9rem;
 }
 
@@ -310,12 +313,12 @@ footer {
     width: 65px;
     height: 65px;
     border-radius: 50%;
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     color: var(--white);
     border: none;
     font-size: 28px;
     cursor: pointer;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 20px rgba(0, 151, 167, 0.4);
     transition: all 0.3s;
     display: flex;
     align-items: center;
@@ -324,7 +327,7 @@ footer {
 
 .chat-toggle-btn:hover {
     transform: scale(1.1) rotate(10deg);
-    background-color: var(--light-green);
+    background-color: var(--light-color);
 }
 
 .chat-window {
@@ -343,7 +346,7 @@ footer {
     pointer-events: none;
     transform: translateY(20px);
     transition: all 0.3s ease;
-    border: 2px solid var(--primary-green);
+    border: 2px solid var(--primary-color);
 }
 
 .chat-window.active {
@@ -353,7 +356,7 @@ footer {
 }
 
 .chat-header {
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 15px;
     display: flex;
@@ -373,7 +376,7 @@ footer {
 .chat-body {
     flex: 1;
     padding: 15px;
-    background-color: #f1f8e9;
+    background-color: var(--soft-bg);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -391,13 +394,13 @@ footer {
 .bot-message {
     background-color: var(--white);
     color: var(--text-color);
-    border: 1px solid #c5e1a5;
+    border: 1px solid #B2EBF2;
     align-self: flex-start;
     border-bottom-left-radius: 2px;
 }
 
 .user-message {
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     color: var(--white);
     align-self: flex-end;
     border-bottom-right-radius: 2px;
@@ -421,11 +424,11 @@ footer {
 }
 
 #chatInput:focus {
-    border-color: var(--primary-green);
+    border-color: var(--primary-color);
 }
 
 #sendBtn {
-    background-color: var(--dark-brown);
+    background-color: var(--dark-accent);
     color: var(--white);
     border: none;
     width: 40px;
@@ -436,7 +439,7 @@ footer {
 }
 
 #sendBtn:hover {
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
 }
 
 /* --- MOBİL UYUMLULUK (Responsive) --- */
@@ -450,7 +453,7 @@ footer {
         right: -100%;
         top: 55px;
         height: calc(100vh - 55px);
-        background-color: var(--dark-brown);
+        background-color: var(--dark-accent);
         flex-direction: column;
         width: 60%;
         align-items: center;
@@ -472,7 +475,7 @@ footer {
 
 /* =========================================
    YENİ EKLENEN: İLETİŞİM SAYFASI STİLLERİ
-   (Senin kodlarının altına eklendi)
+   (Turkuaz Temaya Uyarlı)
    ========================================= */
 
 .contact-page-section {
@@ -480,7 +483,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; /* Mobilde alt alta geçmesi için */
+    flex-wrap: wrap; 
     gap: 3rem;
     align-items: flex-start;
 }
@@ -492,12 +495,12 @@ footer {
     background: var(--white);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-left: 5px solid var(--primary-green);
+    box-shadow: 0 5px 15px rgba(0, 151, 167, 0.1);
+    border-left: 5px solid var(--primary-color);
 }
 
 .contact-info-box h3 {
-    color: var(--dark-brown);
+    color: var(--dark-accent);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
@@ -513,7 +516,7 @@ footer {
 }
 
 .info-item i {
-    color: var(--light-green);
+    color: var(--light-color);
     font-size: 1.4rem;
     width: 30px;
     text-align: center;
@@ -521,13 +524,13 @@ footer {
 
 /* Sağ Taraf: Harita Kutusu */
 .map-container {
-    flex: 1.5; /* Harita yazıdan biraz daha geniş olsun */
+    flex: 1.5; 
     min-width: 300px;
     height: 450px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    border: 2px solid var(--primary-green);
+    border: 2px solid var(--primary-color);
 }
 
 .map-container iframe {
@@ -537,9 +540,8 @@ footer {
 }
 
 /* Alt sayfalar için kısa Hero alanı */
-/* Tabela görselini .hero sınıfından otomatik alır, sadece yüksekliği kısarız */
 .page-hero {
-    height: 50vh; /* Ana sayfadan daha kısa */
+    height: 50vh; 
 }
 
 /* --- HAKKIMIZDA SAYFASI ÖZEL STİLLERİ --- */
@@ -550,7 +552,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
-    align-items: center; /* Dikeyde ortala */
+    align-items: center; 
 }
 
 .about-text {
@@ -559,10 +561,10 @@ footer {
 }
 
 .about-text h2 {
-    color: var(--primary-green);
+    color: var(--primary-color);
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--light-green);
+    border-bottom: 2px solid var(--light-color);
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -570,7 +572,7 @@ footer {
 .about-text p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
-    color: #555;
+    color: #546E7A; /* Mavi gri yazı */
     line-height: 1.8;
 }
 
@@ -580,7 +582,7 @@ footer {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    border: 5px solid var(--white); /* Beyaz çerçeve */
+    border: 5px solid var(--white); 
 }
 
 .about-image img {
@@ -591,10 +593,10 @@ footer {
 }
 
 .about-image:hover img {
-    transform: scale(1.05); /* Üzerine gelince hafif büyüsün */
+    transform: scale(1.05); 
 }
 
-/* Ekip Bölümü (Opsiyonel) */
+/* Ekip Bölümü */
 .team-section {
     background-color: var(--white);
     padding: 4rem 2rem;
@@ -615,7 +617,7 @@ footer {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
-    border: 3px solid var(--primary-green);
+    border: 3px solid var(--primary-color);
 }
 
 /* --- DUYURULAR SAYFASI STİLLERİ --- */
@@ -633,19 +635,19 @@ footer {
     background: var(--white);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 151, 167, 0.08);
     transition: transform 0.3s;
     border: 1px solid #eee;
 }
 
 .announcement-post:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 151, 167, 0.15);
 }
 
 .announcement-img {
     flex: 1;
-    min-width: 300px; /* Mobilde çok küçülmesin */
+    min-width: 300px; 
     max-width: 400px;
 }
 
@@ -666,8 +668,8 @@ footer {
 
 .announcement-date {
     display: inline-block;
-    background-color: var(--light-green);
-    color: var(--white);
+    background-color: var(--light-color);
+    color: #006064; /* Açık mavinin üstünde koyu yazı */
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -678,12 +680,12 @@ footer {
 
 .announcement-details h3 {
     font-size: 1.5rem;
-    color: var(--primary-green);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .announcement-details p {
-    color: #555;
+    color: #546E7A;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -699,12 +701,12 @@ footer {
     }
 }
 
-/* --- DUYURU LİSTESİ DÜZENLEMESİ (BUTON YERİNE LİNK) --- */
+/* --- DUYURU LİSTESİ DÜZENLEMESİ --- */
 .read-more-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--primary-green);
+    color: var(--primary-color);
     font-weight: bold;
     margin-top: 15px;
     font-size: 1.1rem;
@@ -713,25 +715,24 @@ footer {
 }
 
 .read-more-link:hover {
-    color: #1b5e20;
-    border-bottom: 2px solid #1b5e20;
-    gap: 12px; /* Ok işareti biraz kaysın */
+    color: #006064;
+    border-bottom: 2px solid #006064;
+    gap: 12px; 
 }
 
-/* --- DUYURU DETAY SAYFASI (DERGİ MODU) --- */
+/* --- DUYURU DETAY SAYFASI --- */
 .blog-detail-section {
-    max-width: 800px; /* Okuması kolay olsun diye çok geniş yapmıyoruz */
+    max-width: 800px;
     margin: 4rem auto;
     padding: 0 20px;
 }
 
 .blog-hero-image {
-    width: 100%;         /* Genişlik bulunduğu alana sığsın */
-    height: auto;        /* Yükseklik resmin orijinal oranına göre otomatik ayarlansın (KIRPMA YOK) */
+    width: 100%;        
+    height: auto;        
     border-radius: 15px;
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
-    /* object-fit: cover; satırını kaldırdık */
 }
 
 .blog-header {
@@ -741,14 +742,14 @@ footer {
 }
 
 .blog-header h1 {
-    color: var(--primary-green);
+    color: var(--primary-color);
     font-size: 2.5rem;
     margin-bottom: 10px;
     line-height: 1.2;
 }
 
 .blog-meta {
-    color: #777;
+    color: #78909C;
     font-size: 0.9rem;
     display: flex;
     gap: 15px;
@@ -757,7 +758,7 @@ footer {
 .blog-content-body {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #444;
+    color: #37474F;
 }
 
 .blog-content-body p {
@@ -772,7 +773,7 @@ footer {
 }
 
 .back-link {
-    color: var(--dark-brown);
+    color: var(--dark-accent);
     font-weight: bold;
     display: inline-flex;
     align-items: center;
@@ -781,26 +782,26 @@ footer {
 }
 
 .back-link:hover {
-    color: var(--primary-green);
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
-    
     .blog-header h1 { font-size: 1.8rem; }
 }
 
+/* --- GETİR BUTONU (DEĞİŞMEDİ) --- */
 .getir-float-btn {
     position: fixed;
-    bottom: 105px; /* Chat butonunun (65px) + boşluğun (40px) üstünde dursun */
+    bottom: 105px; 
     right: 25px;
     width: 65px;
     height: 65px;
-    background-color: #5D3EBC; /* Getir Moru */
-    color: #FFD300; /* Getir Sarısı */
+    background-color: #5D3EBC; 
+    color: #FFD300; 
     border-radius: 50%;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1999; /* Chatbot'un (2000) bir tık altında */
+    z-index: 1999; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -822,6 +823,6 @@ footer {
 }
 
 .getir-float-btn:hover {
-    transform: scale(1.1); /* Üzerine gelince büyüsün */
+    transform: scale(1.1); 
     background-color: #4c3299;
 }
