@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | Yumak Petshop</title>
+    
+    <link rel="icon" href="topbar.jpeg" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img">
+                Yumak Petshop
+            </div>
+            
+            <div class="hamburger" id="hamburgerBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Ana Sayfa</a></li>
+                <li><a href="duyurular.html" onclick="closeMenu()">Duyurular</a></li>
+                <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
+                <li><a href="hizmetler.html" class="active" onclick="closeMenu()">Hizmetler</a></li>
+                <li><a href="iletisim.html" onclick="closeMenu()">İletişim & Konum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <h1>Hizmetlerimiz</h1>
+            <p style="color: white;">Can dostlarınız için sunduğumuz ayrıcalıklar</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="gallery-grid">
+            <div class="card reveal">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kaliteli Mamalar">
+                </div>
+                <div class="card-content">
+                    <h3>Premium Mamalar</h3>
+                    <p>Dünya markası kuru ve yaş mamalar, ödül bisküvileri ve özel beslenme destek ürünleri. Tahılsız ve hipoalerjenik seçenekler.</p>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Aksesuar ve Oyuncak">
+                </div>
+                <div class="card-content">
+                    <h3>Aksesuar & Oyuncak</h3>
+                    <p>Rengarenk tasmalar, konforlu yataklar, taşıma çantaları ve zeka geliştirici oyuncaklar. Dostunuzun tarzını yansıtın.</p>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pet Kuaför">
+                </div>
+                <div class="card-content">
+                    <h3>Pet Kuaför</h3>
+                    <p>Makas tıraşı, banyo, tırnak kesimi ve hijyenik bakım. Profesyonel ekibimizle stressiz bakım keyfi.</p>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Veteriner Danışmanlık">
+                </div>
+                <div class="card-content">
+                    <h3>Beslenme Danışmanlığı</h3>
+                    <p>Dostunuzun yaşına, ırkına ve sağlık durumuna en uygun mama seçimi için ücretsiz danışmanlık.</p>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img-container">
+                    <img src="hijyen.webp" alt="Kedi Kumu">
+                </div>
+                <div class="card-content">
+                    <h3>Hijyen Ürünleri</h3>
+                    <p>Kedi kumları, temizlik spreyleri, şampuanlar ve tuvalet eğitim ürünleri.</p>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kıyafetler">
+                </div>
+                <div class="card-content">
+                    <h3>Pet Giyim</h3>
+                    <p>Yağmurluklar, kazaklar ve özel gün kostümleri ile dostunuz her zaman şık ve sıcak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Yumak Petshop</h3>
+            <p>Minik dostlarınızın konforu ve şıklığı için buradayız.</p>
+            <div class="copyright" style="margin-top: 10px; border-top: 1px solid #5d4037; padding-top: 10px;">
+                <p>© 2026 Yumak Petshop. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Yumak Asistan</span>
+                </div>
+                <button class="close-chat" onclick="toggleChat()">X</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message bot-message">
+                    Merhaba! 🐾 Hangi hizmetimiz veya ürünümüz hakkında bilgi almak istersiniz?
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="Mesajınızı yazın..." onkeypress="handleKeyPress(event)">
+                <button id="sendBtn" onclick="sendMessage()">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fa-solid fa-comment-dots"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim & Konum | Yumak Petshop</title>
+    
+    <link rel="icon" href="topbar.jpeg" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img">
+                Yumak Petshop
+            </div>
+            
+            <div class="hamburger" id="hamburgerBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" onclick="closeMenu()">Ana Sayfa</a></li>
+    <li><a href="duyurular.html" onclick="closeMenu()">Duyurular</a></li>
+    <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
+    <li><a href="hizmetler.html" onclick="closeMenu()">Hizmetler</a></li>
+    <li><a href="iletisim.html" class="active" onclick="closeMenu()">İletişim & Konum</a></li>
+    
+</ul>
+        </nav>
+    </header>
+
+    <section class="hero page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <h1>Bize Ulaşın</h1>
+            <p style="color: white;">Mağazamıza bekliyoruz!</p>
+        </div>
+    </section>
+
+    <section class="contact-page-section">
+        
+        <div class="contact-info-box reveal">
+            <h3>İletişim Bilgileri</h3>
+            
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <p><strong>Adres:</strong><br>İstiklal, Reşit Paşa Cd. NO:88/A, 34773 Ümraniye/İstanbul</p>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <p><strong>Telefon:</strong><br><a href="tel:05469383481">0546 938 34 81</a></p>
+            </div>
+
+             <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <p><strong>Pet kuaför randevu</strong><br><a href="tel:05067856746">0506 785 67 46</a></p>
+            </div>
+
+
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <p><strong>Çalışma Saatleri:</strong><br>
+                Hafta İçi: 09:00 - 21:00<br>
+                Cumartesi: 09:00 - 21.00 <br>
+                Pazar:     13:00 - 21:00</p>
+            </div>
+
+            <a href="https://wa.me/905469383481?text=Merhaba,%20hizmetleriniz%20hakkında%20bilgi%20almak%20istiyorum." 
+   target="_blank" 
+   class="btn primary-btn" 
+   style="width: 100%; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; border-color: #25D366;">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> WhatsApp ile İletişime Geç
+</a>
+        </div>
+
+        <div class="map-container reveal">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d632.8896295754618!2d29.10317772400574!3d41.01327847556995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac96d370b6ddf%3A0xdbcbce76dfaee871!2sYUMAK%20PETSHOP!5e0!3m2!1str!2str!4v1771167103053!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Yumak Petshop</h3>
+            <p>Minik dostlarınızın konforu ve şıklığı için buradayız.</p>
+            <div class="copyright" style="margin-top: 10px; border-top: 1px solid #5d4037; padding-top: 10px;">
+                <p>&copy; 2026 Yumak Petshop. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Yumak Asistan</span>
+                </div>
+                <button class="close-chat" onclick="toggleChat()">X</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message bot-message">
+                    Merhaba! 🐾 Konumumuz veya çalışma saatlerimiz hakkında yardımcı olabilir miyim?
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="Mesajınızı yazın..." onkeypress="handleKeyPress(event)">
+                <button id="sendBtn" onclick="sendMessage()">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fa-solid fa-comment-dots"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duyuru Detayı | Yumak Petshop</title>
+    
+    <link rel="icon" href="topbar.jpeg" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img">
+                Yumak Petshop
+            </div>
+            <div class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Ana Sayfa</a></li>
+                <li><a href="duyurular.html" class="active" onclick="closeMenu()">Duyurular</a></li>
+                <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
+                <li><a href="hizmetler.html" onclick="closeMenu()">Hizmetler</a></li>
+                <li><a href="iletisim.html" onclick="closeMenu()">İletişim & Konum</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <h1>Duyuru Detayı</h1>
+        </div>
+    </section>
+
+    <section class="blog-detail-section reveal">
+        
+        <img src="petkuafor.jpeg" alt="Haber Detay" class="blog-hero-image">
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span><i class="fa-solid fa-calendar-days"></i> 15 Şubat 2026</span>
+                <span><i class="fa-solid fa-user"></i> Yumak Petshop Ekibi</span>
+            </div>
+            <h1>Pet kuaför hizmetimiz başlamıştır.!</h1>
+        </div>
+
+        <div class="blog-content-body">
+            <p>
+                <strong>Sevgili Yumak Petshop Ailesi,</strong>
+            </p>
+            <p>
+                Yumak Petshop ailesi olarak sizlere sunduğumuz hizmetlere bir yenisini daha eklemenin heyecanını yaşıyoruz! Uzun süredir üzerinde çalıştığımız ve en hijyenik koşulları sağladığımız <strong>Profesyonel Pet Kuaför Salonumuz</strong> nihayet hizmete açıldı.
+            </p>
+            <p>
+                Minik dostlarımızın tüy bakımı, sadece estetik bir görünüm için değil, onların deri sağlığı ve yaşam kalitesi için de büyük önem taşır. Bu bilinçle, sertifikalı ve deneyimli uzmanlarımızla dostlarınızı şımartmaya hazırız.
+            </p>
+            <h3>✨ Neler Yapıyoruz?</h3>
+    <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px; color: #444;">
+        <li>Makas ve Makine Tıraşı (Irka özel modeller)</li>
+        <li>Hijyenik Banyo Bakımı</li>
+        <li>Tırnak Kesimi ve Kulak Temizliği</li>
+        <li>Topaklanmış Tüy Açma (Kıtık Açma)</li>
+        <li><strong>Önemli Not:</strong> İşlemlerimizde kesinlikle anestezi veya sakinleştirici kullanmıyoruz. Dostunuzun psikolojisini önemsiyoruz.</li>
+    </ul>
+
+    <p>
+        <strong>🎉 Açılışa Özel Büyük Fırsat!</strong>
+    </p>
+    <p>
+        Salonumuzun açılışı şerefine, ilk ay yapacağınız tüm kuaför randevularında <strong>%30'a varan indirim</strong> fırsatı sizleri bekliyor! Bu özel fiyatlarla tanışmak ve için acele edin.
+    </p>
+    <p>
+        Yoğunluktan etkilenmemek adına lütfen gelmeden önce randevu almayı unutmayın.
+    </p>
+    <p>
+        <em>-Yumak Petshop</em>
+    </p>
+</div>
+
+        <div class="back-btn-container">
+            <a href="duyurular.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Tüm Duyurulara Dön
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Yumak Petshop</h3>
+            <p>Minik dostlarınızın konforu ve şıklığı için buradayız.</p>
+            <div class="copyright" style="margin-top: 10px; border-top: 1px solid #5d4037; padding-top: 10px;">
+                <p>© 2026 Yumak Petshop. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="bot-info"><i class="fa-solid fa-robot"></i><span>Yumak Asistan</span></div>
+                <button class="close-chat" onclick="toggleChat()">X</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message bot-message">Bu kampanya hakkında daha fazla bilgi almak ister misiniz? 🐾</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="Mesajınızı yazın..." onkeypress="handleKeyPress(event)">
+                <button id="sendBtn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="chat-toggle-btn" onclick="toggleChat()"><i class="fa-solid fa-comment-dots"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

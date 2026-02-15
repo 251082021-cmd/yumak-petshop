@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duyuru Detayı | Yumak Petshop</title>
+    
+    <link rel="icon" href="topbar.jpeg" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img">
+                Yumak Petshop
+            </div>
+            <div class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Ana Sayfa</a></li>
+                <li><a href="duyurular.html" class="active" onclick="closeMenu()">Duyurular</a></li>
+                <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
+                <li><a href="hizmetler.html" onclick="closeMenu()">Hizmetler</a></li>
+                <li><a href="iletisim.html" onclick="closeMenu()">İletişim & Konum</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <h1>Duyuru Detayı</h1>
+        </div>
+    </section>
+
+    <section class="blog-detail-section reveal">
+        
+        <img src="duyuru2.jpeg" alt="Haber Detay" class="blog-hero-image">
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span><i class="fa-solid fa-calendar-days"></i> 15 Şubat 2026</span>
+                <span><i class="fa-solid fa-user"></i> Yumak Petshop Ekibi</span>
+            </div>
+            <h1>Eve Servis Saatlerimiz güncellendi.!</h1>
+        </div>
+
+        <div class="blog-content-body">
+            <p>
+                <strong>Sevgili Yumak Petshop Ailesi,</strong>
+            </p>
+            <p>
+                Yumak Pet Shop olarak sizlere ve minik dostlarımıza daha iyi hizmet verebilmek için evlere servis saatlerimizi güncelledik! 🐾
+            </p>
+            <p>
+               Yepyeni çalışma saatlerimiz şu şekildedir:
+🗓 Hafta İçi: 19.00 - 23.00
+🗓 Cumartesi: 09.00 - 23.00
+🗓 Pazar: 14.00 - 23.00
+
+İhtiyaçlarınız için bize 0546 938 34 81 numaralı telefondan ulaşabilirsiniz. Sevgiyle kalın! 🐶🐱 </p>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="duyurular.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Tüm Duyurulara Dön
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Yumak Petshop</h3>
+            <p>Minik dostlarınızın konforu ve şıklığı için buradayız.</p>
+            <div class="copyright" style="margin-top: 10px; border-top: 1px solid #5d4037; padding-top: 10px;">
+                <p>© 2026 Yumak Petshop. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="bot-info"><i class="fa-solid fa-robot"></i><span>Yumak Asistan</span></div>
+                <button class="close-chat" onclick="toggleChat()">X</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message bot-message">Bu kampanya hakkında daha fazla bilgi almak ister misiniz? 🐾</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="Mesajınızı yazın..." onkeypress="handleKeyPress(event)">
+                <button id="sendBtn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="chat-toggle-btn" onclick="toggleChat()"><i class="fa-solid fa-comment-dots"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
