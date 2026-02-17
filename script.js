@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. MOBİL MENÜ KONTROLÜ ---
+    // --- 1. MOBİL MENÜ KONTROLÜ (MEVCUT KODUN) ---
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    // --- 2. SCROLL ANİMASYONU (REVEAL) ---
+    // --- 2. SCROLL ANİMASYONU (REVEAL) (MEVCUT KODUN) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3. GELİŞMİŞ YAPAY ZEKA ASİSTAN MANTIĞI (LUCY) ---
     
-    // WhatsApp Butonu Şablonu (Zor sorularda çıkar)
+    // 1. GENEL DESTEK BUTONU (Petshop Hattı: 0546...)
     const whatsappButtonHTML = `
         <br><br>
         <a href="https://wa.me/905469383481?text=Merhaba,%20sitenizdeki%20asistan%20sorumu%20tam%20yanıtlayamadı,%20detaylı%20bilgi%20alabilir%20miyim?" 
@@ -44,7 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
     `;
 
-    // GENİŞLETİLMİŞ BİLGİ BANKASI
+    // 2. KUAFÖR RANDEVU BUTONU (Kuaför Hattı: 0506...)
+    const kuaforButtonHTML = `
+        <br><br>
+        <a href="https://wa.me/905067856746?text=Merhaba,%20Pet%20Kuaför%20randevusu%20oluşturmak%20istiyorum." 
+           target="_blank" 
+           style="background-color: #128C7E; color: white; padding: 10px 15px; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.9rem; margin-top: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            <i class="fa-solid fa-calendar-check" style="font-size: 1.1rem;"></i> Randevu Al (WhatsApp)
+        </a>
+    `;
+
+    // GENİŞLETİLMİŞ BİLGİ BANKASI (DEV LİSTE)
     const botKnowledge = {
         // --- SELAMLAŞMA & KİMLİK ---
         "merhaba": "Merhabalar! Yumak PetShop'a hoş geldiniz. Size ve minik dostunuza nasıl yardımcı olabilirim? 🐾",
@@ -63,16 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
         "telefon": "Mağaza numaramız: 0546 938 34 81. İstediğiniz zaman arayabilirsiniz. 📞",
         "iletişim": "Bize 0546 938 34 81 numarasından veya sağ alttaki WhatsApp butonundan ulaşabilirsiniz.",
         "ödeme": "Mağazamızda Nakit, Kredi Kartı ve Havale ile ödeme yapabilirsiniz.",
-        "canlı": "Mağazamızda canlı hayvan satışımız yoktur.!",
+        "canlı": "Mağazamızda canlı hayvan satışımız yoktur!",
 
-        // --- HİZMETLER ---
-        "kuaför": "Profesyonel Pet Kuaför hizmetimiz var! ✂️ Makas ve makine tıraşı, banyo hizmeti sunuyoruz. Randevu: 0506 785 67 46",
-        "tıraş": "Anestezisiz, dostunuzu strese sokmadan tıraş yapıyoruz. Randevu için: 0506 785 67 46 🐩",
-        "traş": "Anestezisiz, dostunuzu strese sokmadan tıraş yapıyoruz. Randevu için: 0506 785 67 46 🐩",
-        "randevu": "Kuaför randevusu almak için lütfen 0506 785 67 46 numaralı hattımızı arayın veya WhatsApp'tan yazın.",
+        // --- HİZMETLER & RANDEVU (ÖZEL KUAFÖR BUTONU İLE) ---
+        "kuaför": `Profesyonel Pet Kuaför hizmetimiz var! ✂️ Makas ve makine tıraşı, banyo hizmeti sunuyoruz. Randevu almak için butona tıklayabilirsiniz:${kuaforButtonHTML}`,
+        "tıraş": `Anestezisiz, dostunuzu strese sokmadan tıraş yapıyoruz. Hemen randevu oluşturmak için:${kuaforButtonHTML}`,
+        "traş": `Anestezisiz, dostunuzu strese sokmadan tıraş yapıyoruz. Hemen randevu oluşturmak için:${kuaforButtonHTML}`,
+        "randevu": `Kuaför randevusu almak çok kolay! Aşağıdaki butona tıklayarak WhatsApp üzerinden randevunuzu hemen oluşturabilirsiniz:${kuaforButtonHTML}`,
+        "banyo": `İlaçlı veya normal banyo hizmetimiz mevcuttur. Randevu için:${kuaforButtonHTML}`,
+        
         "getir": "Evet! Getir ve Yemeksepeti üzerinden de satış yapıyoruz. 'Yumak Petshop' olarak aratabilirsiniz. 🛵",
-        "sipariş": "Yakın çevreye eve servis hizmetimiz vardır. Sipariş vermek için: 0546 938 34 81",
         "servis": "Yakın çevreye eve servis hizmetimiz vardır. Sipariş vermek için: 0546 938 34 81",
+        "sipariş": "Yakın çevreye eve servis hizmetimiz vardır. Sipariş vermek için: 0546 938 34 81",
         "eve": "Akşam saatlerinde güncellenen saatlerimizle eve servis yapıyoruz. Detaylar için arayabilirsiniz.",
 
         // --- KEDİ ÜRÜNLERİ ---
@@ -123,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "tırnak": "Kedi ve köpekler için özel tırnak makaslarımız var. ✂️",
 
         // --- GENEL FİYAT SORULARI ---
-        "fiyat": "Fiyatlarımız markaya ve ürüne göre değişiyor. En güncel fiyat bilgisi için WhatsApp'tan yazabilirsiniz. 🏷️",
-        "kaç tl": "Ürün çeşitliliğimiz çok fazla olduğu için net fiyatı WhatsApp hattımızdan sorabilirsiniz.",
+        "fiyat": `Fiyatlarımız markaya ve ürüne göre değişiyor. En güncel fiyat bilgisi için WhatsApp'tan yazabilirsiniz: ${whatsappButtonHTML}`,
+        "kaç tl": `Ürün çeşitliliğimiz çok fazla olduğu için net fiyatı WhatsApp hattımızdan sorabilirsiniz: ${whatsappButtonHTML}`,
         "pahalı": "Her bütçeye uygun ürünümüz var! Ekonomik seriden premium seriye kadar seçenek sunuyoruz.",
 
         // --- BİLİNMEYEN DURUM (Default) ---
@@ -135,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatBody = document.getElementById('chatBody');
     const chatInput = document.getElementById('chatInput');
     
-    // --- SOHBET AÇ/KAPA & GETİR BUTONU GİZLEME ---
+    // --- SOHBET AÇ/KAPA & GETİR BUTONU GİZLEME (MEVCUT KODUN) ---
     window.toggleChat = function() {
         const getirBtn = document.querySelector('.getir-float-btn'); 
 
