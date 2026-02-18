@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. MOBİL MENÜ KONTROLÜ (MEVCUT KODUN) ---
+    // --- 1. MOBİL MENÜ KONTROLÜ ---
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    // --- 2. SCROLL ANİMASYONU (REVEAL) (MEVCUT KODUN) ---
+    // --- 2. SCROLL ANİMASYONU (REVEAL) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -34,27 +34,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3. GELİŞMİŞ YAPAY ZEKA ASİSTAN MANTIĞI (LUCY) ---
     
-    // 1. GENEL DESTEK BUTONU (Petshop Hattı: 0546...)
+    // BUTON 1: WhatsApp Destek Butonu
     const whatsappButtonHTML = `
-        <br><br>
         <a href="https://wa.me/905469383481?text=Merhaba,%20sitenizdeki%20asistan%20sorumu%20tam%20yanıtlayamadı,%20detaylı%20bilgi%20alabilir%20miyim?" 
            target="_blank" 
-           style="background-color: #25D366; color: white; padding: 10px 15px; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.9rem; margin-top: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-            <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i> Uzmana Sor (WhatsApp)
+           style="background-color: #25D366; color: white; padding: 10px 15px; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.9rem; margin-top: 5px; width: fit-content; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i> Uzmana Sor
         </a>
     `;
 
-    // 2. KUAFÖR RANDEVU BUTONU (Kuaför Hattı: 0506...)
+    // BUTON 2: Kuaför Randevu Butonu
     const kuaforButtonHTML = `
         <br><br>
         <a href="https://wa.me/905067856746?text=Merhaba,%20Pet%20Kuaför%20randevusu%20oluşturmak%20istiyorum." 
            target="_blank" 
            style="background-color: #128C7E; color: white; padding: 10px 15px; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.9rem; margin-top: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-            <i class="fa-solid fa-calendar-check" style="font-size: 1.1rem;"></i> Randevu Al (WhatsApp)
+            <i class="fa-solid fa-calendar-check" style="font-size: 1.1rem;"></i> Randevu Al
         </a>
     `;
 
-    // GENİŞLETİLMİŞ BİLGİ BANKASI (DEV LİSTE)
+    // BUTON 3: Hizmetler Sayfasına Yönlendirme Butonu (YENİ EKLENDİ)
+    const hizmetlerButtonHTML = `
+        <a href="hizmetler.html" 
+           style="background-color: #0097A7; color: white; padding: 10px 15px; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.9rem; margin-top: 5px; width: fit-content; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            <i class="fa-solid fa-store" style="font-size: 1.1rem;"></i> Ürünleri İncele
+        </a>
+    `;
+
+    // GENİŞLETİLMİŞ BİLGİ BANKASI
     const botKnowledge = {
         // --- SELAMLAŞMA & KİMLİK ---
         "merhaba": "Merhabalar! Yumak PetShop'a hoş geldiniz. Size ve minik dostunuza nasıl yardımcı olabilirim? 🐾",
@@ -75,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "ödeme": "Mağazamızda Nakit, Kredi Kartı ve Havale ile ödeme yapabilirsiniz.",
         "canlı": "Mağazamızda canlı hayvan satışımız yoktur!",
 
-        // --- HİZMETLER & RANDEVU (ÖZEL KUAFÖR BUTONU İLE) ---
-        "kuaför": `Profesyonel Pet Kuaför hizmetimiz var! ✂️ Makas ve makine tıraşı, banyo hizmeti sunuyoruz. Randevu almak için butona tıklayabilirsiniz:${kuaforButtonHTML}`,
+        // --- HİZMETLER & RANDEVU ---
+        "kuaför": `Profesyonel Pet Kuaför hizmetimiz var! ✂️ Makas ve makine tıraşı, banyo hizmeti sunuyoruz. Randevu almak için:${kuaforButtonHTML}`,
         "tıraş": `Anestezisiz, dostunuzu strese sokmadan tıraş yapıyoruz. Hemen randevu oluşturmak için:${kuaforButtonHTML}`,
         "traş": `Anestezisiz, dostunuzu strese sokmadan tıraş yapıyoruz. Hemen randevu oluşturmak için:${kuaforButtonHTML}`,
         "randevu": `Kuaför randevusu almak çok kolay! Aşağıdaki butona tıklayarak WhatsApp üzerinden randevunuzu hemen oluşturabilirsiniz:${kuaforButtonHTML}`,
@@ -135,19 +142,26 @@ document.addEventListener('DOMContentLoaded', () => {
         "tırnak": "Kedi ve köpekler için özel tırnak makaslarımız var. ✂️",
 
         // --- GENEL FİYAT SORULARI ---
-        "fiyat": `Fiyatlarımız markaya ve ürüne göre değişiyor. En güncel fiyat bilgisi için WhatsApp'tan yazabilirsiniz: ${whatsappButtonHTML}`,
-        "kaç tl": `Ürün çeşitliliğimiz çok fazla olduğu için net fiyatı WhatsApp hattımızdan sorabilirsiniz: ${whatsappButtonHTML}`,
+        "fiyat": `Fiyatlarımız markaya ve ürüne göre değişiyor. En güncel fiyat bilgisi için WhatsApp'tan yazabilirsiniz: <br>${whatsappButtonHTML}`,
+        "kaç tl": `Ürün çeşitliliğimiz çok fazla olduğu için net fiyatı WhatsApp hattımızdan sorabilirsiniz: <br>${whatsappButtonHTML}`,
         "pahalı": "Her bütçeye uygun ürünümüz var! Ekonomik seriden premium seriye kadar seçenek sunuyoruz.",
 
-        // --- BİLİNMEYEN DURUM (Default) ---
-        "varsayılan": `Bu konuyu şu an tam yanıtlayamıyorum. 😔 Ancak çok detaylı veya özel bir ürün soruyor olabilirsiniz. Dilerseniz aşağıdaki butona tıklayarak doğrudan mağaza yetkilimize WhatsApp üzerinden sorabilirsiniz:${whatsappButtonHTML}`
+        // --- BİLİNMEYEN DURUM (Default) - GÜNCELLENDİ ---
+        "varsayılan": `
+            Bunu tam anlayamadım. 🤔 Dilerseniz ürün ve hizmetlerimizi detaylı inceleyebilir veya doğrudan bize sorabilirsiniz:
+            <br><br>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                ${hizmetlerButtonHTML}
+                ${whatsappButtonHTML}
+            </div>
+        `
     };
 
     const chatWindow = document.getElementById('chatWindow');
     const chatBody = document.getElementById('chatBody');
     const chatInput = document.getElementById('chatInput');
     
-    // --- SOHBET AÇ/KAPA & GETİR BUTONU GİZLEME (MEVCUT KODUN) ---
+    // --- SOHBET AÇ/KAPA & GETİR BUTONU GİZLEME ---
     window.toggleChat = function() {
         const getirBtn = document.querySelector('.getir-float-btn'); 
 
@@ -226,4 +240,4 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hiçbiri yoksa varsayılanı döndür
         return botKnowledge["varsayılan"];
     }
-});
+});     

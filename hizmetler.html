@@ -8,6 +8,104 @@
     <link rel="icon" href="topbar1.jpg" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Kartların tıklanabilir olduğunu göstermek için */
+        .card {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        /* Tıklayınca hafif bir efekt */
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        /* --- MODAL (AÇILIR PENCERE) STİLLERİ --- */
+        .modal-overlay {
+            display: none; /* Başlangıçta gizli */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Arka planı karart */
+            z-index: 3000; /* Her şeyin üstünde olsun */
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-top: 5px solid var(--primary-color, #0097A7); /* Senin turkuaz rengin */
+            animation: slideUp 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #555;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: red;
+        }
+
+        .modal-title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            max-height: 300px; /* Liste çok uzunsa kaydırma çubuğu çıksın */
+            overflow-y: auto;
+        }
+
+        .product-list li {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .product-list li:last-child {
+            border-bottom: none;
+        }
+
+        .product-list li i {
+            color: var(--primary-color, #0097A7);
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); }
+            to { transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
@@ -26,7 +124,7 @@
                 <li><a href="index.html" onclick="closeMenu()">Ana Sayfa</a></li>
                 <li><a href="duyurular.html" onclick="closeMenu()">Duyurular</a></li>
                 <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
-                <li><a href="hizmetler.html" class="active" onclick="closeMenu()">Hizmetler</a></li>
+                <li><a href="hizmetler.html" class="active" onclick="closeMenu()">Hizmetler & Ürünler</a></li>
                 <li><a href="iletisim.html" onclick="closeMenu()">İletişim & Konum</a></li>
             </ul>
         </nav>
@@ -35,74 +133,84 @@
     <section class="hero page-hero">
         <div class="hero-overlay"></div>
         <div class="hero-content reveal">
-            <h1>Hizmetlerimiz</h1>
-            <p style="color: white;">Can dostlarınız için sunduğumuz ayrıcalıklar</p>
+            <h1>Hizmetlerimiz ve Ürünlerimiz</h1>
+            <p style="color: white;">Detaylı ürün listesini görmek için kutulara tıklayınız.</p>
         </div>
     </section>
 
     <section class="section">
         <div class="gallery-grid">
-            <div class="card reveal">
+            
+            <div class="card reveal" onclick="openProductModal('mama')">
                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kaliteli Mamalar">
                 </div>
                 <div class="card-content">
-                    <h3>Premium Mamalar</h3>
-                    <p>Dünya markası kuru ve yaş mamalar, ödül bisküvileri ve özel beslenme destek ürünleri. Tahılsız ve hipoalerjenik seçenekler.</p>
+                    <h3>Premium Mamalar <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                    <p>Dünya markası kuru ve yaş mamalar. Markaları görmek için tıklayın.</p>
                 </div>
             </div>
 
-            <div class="card reveal">
+            <div class="card reveal" onclick="openProductModal('aksesuar')">
                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Aksesuar ve Oyuncak">
                 </div>
                 <div class="card-content">
-                    <h3>Aksesuar & Oyuncak</h3>
-                    <p>Rengarenk tasmalar, konforlu yataklar, taşıma çantaları ve zeka geliştirici oyuncaklar. Dostunuzun tarzını yansıtın.</p>
+                    <h3>Aksesuar & Oyuncak <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                    <p>Tasmalar, yataklar ve oyuncaklar. Çeşitleri görmek için tıklayın.</p>
                 </div>
             </div>
 
-            <div class="card reveal">
+            <div class="card reveal" onclick="openProductModal('kuafor')">
                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pet Kuaför">
                 </div>
                 <div class="card-content">
-                    <h3>Pet Kuaför</h3>
-                    <p>Makas tıraşı, banyo, tırnak kesimi ve hijyenik bakım. Profesyonel ekibimizle stressiz bakım keyfi.</p>
+                    <h3>Pet Kuaför <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                    <p>Makas tıraşı, banyo ve bakım. Hizmet detayları için tıklayın.</p>
                 </div>
             </div>
 
-            <div class="card reveal">
+            <div class="card reveal" onclick="openProductModal('danismanlik')">
                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Veteriner Danışmanlık">
                 </div>
                 <div class="card-content">
                     <h3>Beslenme Danışmanlığı</h3>
-                    <p>Dostunuzun yaşına, ırkına ve sağlık durumuna en uygun mama seçimi için ücretsiz danışmanlık.</p>
+                    <p>Dostunuzun yaşına ve ırkına uygun mama seçimi desteği.</p>
                 </div>
             </div>
 
-            <div class="card reveal">
+            <div class="card reveal" onclick="openProductModal('hijyen')">
                 <div class="card-img-container">
                     <img src="hijyen.webp" alt="Kedi Kumu">
                 </div>
                 <div class="card-content">
-                    <h3>Hijyen Ürünleri</h3>
-                    <p>Kedi kumları, temizlik spreyleri, şampuanlar ve tuvalet eğitim ürünleri.</p>
+                    <h3>Hijyen Ürünleri <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                    <p>Kumlar, şampuanlar ve spreyler. Detaylar için tıklayın.</p>
                 </div>
             </div>
 
-            <div class="card reveal">
+            <div class="card reveal" onclick="openProductModal('giyim')">
                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kıyafetler">
                 </div>
                 <div class="card-content">
-                    <h3>Pet Giyim</h3>
-                    <p>Yağmurluklar, kazaklar ve özel gün kostümleri ile dostunuz her zaman şık ve sıcak.</p>
+                    <h3>Pet Giyim <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                    <p>Yağmurluk ve kıyafetler. Modelleri görmek için tıklayın.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="productModal" class="modal-overlay" onclick="closeProductModal(event)">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProductModal()">&times;</span>
+            <h2 id="modalTitle" class="modal-title">Ürün Listesi</h2>
+            <ul id="modalList" class="product-list">
+                </ul>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -125,7 +233,7 @@
             </div>
             <div class="chat-body" id="chatBody">
                 <div class="message bot-message">
-                    Merhaba! 🐾 Hangi hizmetimiz veya ürünümüz hakkında bilgi almak istersiniz?
+                    Merhaba! 🐾 Ben Yumak Petshop asistanı Lucy. Kuaför randevusu, mama çeşitleri veya aksesuarlarımız hakkında size nasıl yardımcı olabilirim?
                 </div>
             </div>
             <div class="chat-footer">
@@ -140,12 +248,123 @@
         </button>
     </div>
 
-    <script src="script.js"></script>
     <a href="https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/" target="_blank" class="getir-float-btn">
         <i class="fa-solid fa-motorcycle"></i>
         <span>Getir</span>
     </a>
 
-    <div class="chat-widget">
+    <script src="script.js"></script>
+    
+    <script>
+        // Ürün Veri Tabanı (Burayı istediğin gibi doldurabilirsin)
+        const productData = {
+            'mama': {
+                title: "Mama Markalarımız",
+                items: [
+                    "Royal Canin (Yavru, Yetişkin, Kısır)",
+                    "ProPlan (Somonlu, Kuzulu, Tavuklu)",
+                    "N&D (Tahılsız, Balkabaklı)",
+                    "Hills Science Plan",
+                    "Acana & Orijen",
+                    "Reflex & Reflex Plus",
+                    "Felicia",
+                    "Yaş Mamalar (Gimcat, Schesir, Nutri Feline)",
+                    "Ödül Mamaları ve Kemikler"
+                ]
+            },
+            'aksesuar': {
+                title: "Aksesuar & Oyuncaklar",
+                items: [
+                    "Kedi & Köpek Tasmaları (Işıklı, İsimli)",
+                    "Otomatik Gezdirme Kayışları",
+                    "Yataklar ve Minderler",
+                    "Taşıma Çantaları (Astronot, Box)",
+                    "Kedi Tırmalama Tahtaları",
+                    "Kedi Evleri",
+                    "Zeka ve Aktivite Oyuncakları",
+                    "Diş İpi Oyuncaklar"
+                ]
+            },
+            'kuafor': {
+                title: "Kuaför Hizmet Detayları",
+                items: [
+                    "Makas Tıraşı (Estetik Kesim)",
+                    "Makine Tıraşı (Hijyenik)",
+                    "Banyo ve Yıkama",
+                    "Tırnak Kesimi ve Törpü",
+                    "Kulak ve Göz Temizliği",
+                    "Anal Kese Temizliği",
+                    "Topak Açma İşlemi"
+                ]
+            },
+            'hijyen': {
+                title: "Hijyen ve Bakım Ürünleri",
+                items: [
+                    "Bentonit Kedi Kumları (İnce/Kalın)",
+                    "Silika ve Çam Peleti Kumlar",
+                    "Kedi/Köpek Şampuanları",
+                    "Kuru Köpük Şampuan",
+                    "Pire ve Kene Damlaları",
+                    "Koku Giderici Spreyler",
+                    "Çiş Eğitim Pedleri ve Damlaları",
+                    "Tüy Toplayıcı Eldivenler ve Taraklar"
+                ]
+            },
+            'giyim': {
+                title: "Pet Giyim Modelleri",
+                items: [
+                    "Yağmurluklar (Tüm Irklar İçin)",
+                    "Kışlık Kazak ve Sweatshirtler",
+                    "Montlar ve Yelekler",
+                    "Ayakkabı ve Patikler",
+                    "Özel Gün Kostümleri",
+                    "Papyon ve Bandanalar"
+                ]
+            },
+            'danismanlik': {
+                title: "Danışmanlık Hizmeti",
+                items: [
+                    "Irka Özel Beslenme Programı",
+                    "Alerjik Durum Analizi",
+                    "Kilo Kontrol Yönetimi"
+                    
+                ]
+            }
+        };
+
+        // Modalı Açan Fonksiyon
+        function openProductModal(category) {
+            const modal = document.getElementById('productModal');
+            const titleEl = document.getElementById('modalTitle');
+            const listEl = document.getElementById('modalList');
+            
+            // Veriyi çek
+            const data = productData[category];
+
+            if (data) {
+                // Başlığı ayarla
+                titleEl.textContent = data.title;
+                
+                // Listeyi temizle ve yeniden doldur
+                listEl.innerHTML = '';
+                data.items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fa-solid fa-paw"></i> ${item}`;
+                    listEl.appendChild(li);
+                });
+
+                // Modalı göster
+                modal.style.display = 'flex';
+            }
+        }
+
+        // Modalı Kapatan Fonksiyon
+        function closeProductModal(event) {
+            // Eğer fonksiyona bir event geldiyse ve tıklanan yer overlay değilse (içerikse) kapatma
+            if (event && event.target !== event.currentTarget) return;
+            
+            document.getElementById('productModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
