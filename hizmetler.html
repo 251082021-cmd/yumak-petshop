@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz | Yumak Petshop</title>
     
+    <title>Hizmetler & Ürünler | Yumak Petshop - Mama, Kuaför, Aksesuar</title>
+    
+    <meta name="description" content="Ümraniye Yumak Petshop'ta Royal Canin, Proplan, N&D mamalar, profesyonel pet kuaför hizmeti, kedi köpek aksesuarları ve kıyafetleri bulabilirsiniz.">
+    
+    <link rel="canonical" href="https://yumakpetshop.online/hizmetler.html" />
+
+    <meta property="og:title" content="Yumak Petshop Ürün ve Hizmetleri">
+    <meta property="og:description" content="Pet Kuaför, Premium Mamalar ve Aksesuarlar. Neler sunduğumuzu inceleyin.">
+    <meta property="og:url" content="https://yumakpetshop.online/hizmetler.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yumakpetshop.online/logo.png">
+
     <link rel="icon" href="topbar1.jpg" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -112,11 +123,13 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img">
-                Yumak Petshop
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                    <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img" width="50" height="50">
+                    <span>Yumak Petshop</span>
+                </a>
             </div>
             
-            <div class="hamburger" id="hamburgerBtn">
+            <div class="hamburger" id="hamburgerBtn" aria-label="Menüyü Aç">
                 <i class="fa-solid fa-bars"></i>
             </div>
 
@@ -130,78 +143,80 @@
         </nav>
     </header>
 
-    <section class="hero page-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content reveal">
-            <h1>Hizmetlerimiz ve Ürünlerimiz</h1>
-            <p style="color: white;">Detaylı ürün listesini görmek için kutulara tıklayınız.</p>
-        </div>
-    </section>
+    <main>
+        <section class="hero page-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content reveal">
+                <h1>Petshop Ürünlerimiz ve Kuaför Hizmetleri</h1>
+                <p style="color: white;">Detaylı ürün listesini ve markaları görmek için kutulara tıklayınız.</p>
+            </div>
+        </section>
 
-    <section class="section">
-        <div class="gallery-grid">
-            
-            <div class="card reveal" onclick="openProductModal('mama')">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kaliteli Mamalar">
+        <section class="section">
+            <div class="gallery-grid">
+                
+                <div class="card reveal" onclick="openProductModal('mama')">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kedi ve Köpek Mamaları" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Premium Mamalar <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                        <p>Royal Canin, ProPlan, N&D gibi dünya markası kuru ve yaş mamalar.</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>Premium Mamalar <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
-                    <p>Dünya markası kuru ve yaş mamalar. Markaları görmek için tıklayın.</p>
+
+                <div class="card reveal" onclick="openProductModal('aksesuar')">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pet Aksesuar ve Oyuncak" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Aksesuar & Oyuncak <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                        <p>Tasmalar, yataklar, taşıma çantaları ve zeka oyuncakları.</p>
+                    </div>
+                </div>
+
+                <div class="card reveal" onclick="openProductModal('kuafor')">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pet Kuaför Tıraş Hizmeti" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pet Kuaför <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                        <p>Makas tıraşı, banyo, tırnak kesimi ve hijyenik bakım hizmetleri.</p>
+                    </div>
+                </div>
+
+                <div class="card reveal" onclick="openProductModal('danismanlik')">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Veteriner Beslenme Danışmanlığı" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Beslenme Danışmanlığı</h3>
+                        <p>Dostunuzun yaşına, ırkına ve kilosuna uygun doğru mama seçimi.</p>
+                    </div>
+                </div>
+
+                <div class="card reveal" onclick="openProductModal('hijyen')">
+                    <div class="card-img-container">
+                        <img src="hijyen.webp" alt="Kedi Kumu ve Şampuan" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Hijyen Ürünleri <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                        <p>Bentonit kumlar, koku gidericiler, şampuanlar ve eğitim pedleri.</p>
+                    </div>
+                </div>
+
+                <div class="card reveal" onclick="openProductModal('giyim')">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kedi Köpek Kıyafetleri" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pet Giyim <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
+                        <p>Yağmurluk, kazak ve özel tasarım kıyafet modelleri.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="card reveal" onclick="openProductModal('aksesuar')">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Aksesuar ve Oyuncak">
-                </div>
-                <div class="card-content">
-                    <h3>Aksesuar & Oyuncak <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
-                    <p>Tasmalar, yataklar ve oyuncaklar. Çeşitleri görmek için tıklayın.</p>
-                </div>
-            </div>
-
-            <div class="card reveal" onclick="openProductModal('kuafor')">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pet Kuaför">
-                </div>
-                <div class="card-content">
-                    <h3>Pet Kuaför <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
-                    <p>Makas tıraşı, banyo ve bakım. Hizmet detayları için tıklayın.</p>
-                </div>
-            </div>
-
-            <div class="card reveal" onclick="openProductModal('danismanlik')">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Veteriner Danışmanlık">
-                </div>
-                <div class="card-content">
-                    <h3>Beslenme Danışmanlığı</h3>
-                    <p>Dostunuzun yaşına ve ırkına uygun mama seçimi desteği.</p>
-                </div>
-            </div>
-
-            <div class="card reveal" onclick="openProductModal('hijyen')">
-                <div class="card-img-container">
-                    <img src="hijyen.webp" alt="Kedi Kumu">
-                </div>
-                <div class="card-content">
-                    <h3>Hijyen Ürünleri <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
-                    <p>Kumlar, şampuanlar ve spreyler. Detaylar için tıklayın.</p>
-                </div>
-            </div>
-
-            <div class="card reveal" onclick="openProductModal('giyim')">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kıyafetler">
-                </div>
-                <div class="card-content">
-                    <h3>Pet Giyim <i class="fa-solid fa-hand-pointer" style="font-size:0.8em; opacity:0.6;"></i></h3>
-                    <p>Yağmurluk ve kıyafetler. Modelleri görmek için tıklayın.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <div id="productModal" class="modal-overlay" onclick="closeProductModal(event)">
         <div class="modal-content">
@@ -229,7 +244,7 @@
                     <i class="fa-solid fa-robot"></i>
                     <span>Asistan Lucy</span>
                 </div>
-                <button class="close-chat" onclick="toggleChat()">X</button>
+                <button class="close-chat" onclick="toggleChat()" aria-label="Sohbeti Kapat">X</button>
             </div>
             <div class="chat-body" id="chatBody">
                 <div class="message bot-message">
@@ -238,25 +253,25 @@
             </div>
             <div class="chat-footer">
                 <input type="text" id="chatInput" placeholder="Mesajınızı yazın..." onkeypress="handleKeyPress(event)">
-                <button id="sendBtn" onclick="sendMessage()">
+                <button id="sendBtn" onclick="sendMessage()" aria-label="Mesaj Gönder">
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
             </div>
         </div>
-        <button class="chat-toggle-btn" onclick="toggleChat()">
+        <button class="chat-toggle-btn" onclick="toggleChat()" aria-label="Sohbeti Aç">
             <i class="fa-solid fa-comment-dots"></i>
         </button>
     </div>
 
-    <a href="https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/" class="getir-float-btn">
-    <i class="fa-solid fa-motorcycle"></i>
-    <span>Getir</span>
-</a>
+    <a href="https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/" class="getir-float-btn" target="_blank" rel="noopener noreferrer" aria-label="Getir ile Sipariş">
+        <i class="fa-solid fa-motorcycle"></i>
+        <span>Getir</span>
+    </a>
 
     <script src="script.js"></script>
     
     <script>
-        // Ürün Veri Tabanı (Burayı istediğin gibi doldurabilirsin)
+        // Ürün Veri Tabanı
         const productData = {
             'mama': {
                 title: "Mama Markalarımız",
@@ -365,6 +380,42 @@
             
             document.getElementById('productModal').style.display = 'none';
         }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PetStore",
+      "name": "Yumak Petshop",
+      "url": "https://yumakpetshop.online/hizmetler.html",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Petshop Ürünleri ve Hizmetleri",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pet Kuaför ve Tıraş Hizmeti"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Kedi ve Köpek Mamaları (Royal Canin, ProPlan, N&D)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Pet Aksesuarları ve Oyuncaklar"
+            }
+          }
+        ]
+      }
+    }
     </script>
 </body>
 </html>

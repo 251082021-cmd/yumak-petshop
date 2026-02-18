@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yumak Petshop | Mama, Aksesuar ve Kuaför</title>
     
-    <link rel="icon" href="topbar1.jpg" type="image/png">
+    <title>Yumak Petshop | Ümraniye Pet Kuaför, Mama ve Aksesuar</title>
+    
+    <meta name="description" content="Ümraniye Yumak Petshop'ta sevimli dostlarınız için en kaliteli mama, aksesuar ve profesyonel pet kuaför hizmetleri. Getir ile eve sipariş imkanı.">
+    
+    <meta name="keywords" content="ümraniye petshop, pet kuaför, kedi maması, köpek maması, yumak petshop, pet tıraşı">
+    
+    <link rel="canonical" href="https://yumakpetshop.online" />
 
+    <meta property="og:title" content="Yumak Petshop | Mutlu Patiler İçin Her Şey">
+    <meta property="og:description" content="Profesyonel pet kuaför ve geniş ürün yelpazemizle hizmetinizdeyiz.">
+    <meta property="og:image" content="https://yumakpetshop.online/logo.png">
+    <meta property="og:url" content="https://yumakpetshop.online/">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="topbar1.jpg" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,44 +27,48 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img">
-                Yumak Petshop
+                <img src="logo.png" alt="Ümraniye Yumak Petshop Logosu" class="logo-img" width="50" height="50">
+                <span>Yumak Petshop</span>
             </div>
             
-            <div class="hamburger" id="hamburgerBtn">
+            <div class="hamburger" id="hamburgerBtn" aria-label="Menüyü Aç">
                 <i class="fa-solid fa-bars"></i>
             </div>
 
             <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" class="active" onclick="closeMenu()">Ana Sayfa</a></li>
-    <li><a href="duyurular.html" onclick="closeMenu()">Duyurular</a></li>
-    <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
-    <li><a href="hizmetler.html" onclick="closeMenu()">Hizmetler & Ürünler</a></li>
-    <li><a href="iletisim.html" onclick="closeMenu()">İletişim & Konum</a></li>
-</ul>
+                <li><a href="index.html" class="active" onclick="closeMenu()" title="Yumak Petshop Ana Sayfa">Ana Sayfa</a></li>
+                <li><a href="duyurular.html" onclick="closeMenu()" title="Duyurular ve Kampanyalar">Duyurular</a></li>
+                <li><a href="hakkimizda.html" onclick="closeMenu()" title="Hakkımızda">Hakkımızda</a></li>
+                <li><a href="hizmetler.html" onclick="closeMenu()" title="Hizmetlerimiz ve Ürünler">Hizmetler & Ürünler</a></li>
+                <li><a href="iletisim.html" onclick="closeMenu()" title="İletişim ve Adres">İletişim & Konum</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content reveal">
-            <h1>Yumuşacık Tüyler, Mutlu Patiler</h1>
-            <p style="color: white;">En seçkin mamalar, şık aksesuarlar, eğlenceli oyuncaklar ve profesyonel pet kuaför hizmetimizle evcil dostunuzun yanındayız.</p>
-            <button class="btn primary-btn" onclick="openChat()">
-                <i class="fa-solid fa-calendar-check"></i> Bilgi Al
-            </button>
-        </div>
-    </section>
-
-    
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content reveal">
+                <h1>Ümraniye Yumak Petshop ve Pet Kuaför</h1>
+                
+                <h2 style="font-size: 1.5rem; color: #f0f0f0; margin-bottom: 20px;">Yumuşacık Tüyler, Mutlu Patiler</h2>
+                
+                <p style="color: white; margin-bottom: 20px;">En seçkin mamalar, şık aksesuarlar, eğlenceli oyuncaklar ve profesyonel pet kuaför hizmetimizle evcil dostunuzun yanındayız.</p>
+                
+                <button class="btn primary-btn" onclick="openChat()" aria-label="Bilgi Almak İçin Tıkla">
+                    <i class="fa-solid fa-calendar-check"></i> Randevu & Bilgi Al
+                </button>
+            </div>
+        </section>
+    </main>
 
     <footer id="contact">
         <div class="footer-content reveal">
             <h3>Yumak Petshop</h3>
             <p>Minik dostlarınızın konforu ve şıklığı için buradayız.</p>
             <div class="contact-info">
-                <p><i class="fa-solid fa-phone"></i> 0546 938 34 81</p>
-                <p><i class="fa-solid fa-location-dot"></i>Reşitpaşa caddesi. No:88/A, İstanbul Ümraniye</p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+905469383481" style="color: inherit; text-decoration: none;">0546 938 34 81</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> Reşitpaşa caddesi. No:88/A, İstanbul Ümraniye</p>
             </div>
         </div>
         <div class="copyright">
@@ -67,7 +83,7 @@
                     <i class="fa-solid fa-robot"></i>
                     <span>Asistan Lucy</span>
                 </div>
-                <button class="close-chat" onclick="toggleChat()">X</button>
+                <button class="close-chat" onclick="toggleChat()" aria-label="Sohbeti Kapat">X</button>
             </div>
             
             <div class="chat-body" id="chatBody">
@@ -78,24 +94,65 @@
             
             <div class="chat-footer">
                 <input type="text" id="chatInput" placeholder="Mesajınızı yazın..." onkeypress="handleKeyPress(event)">
-                <button id="sendBtn" onclick="sendMessage()">
+                <button id="sendBtn" onclick="sendMessage()" aria-label="Mesaj Gönder">
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
             </div>
         </div>
 
-        <button class="chat-toggle-btn" onclick="toggleChat()">
+        <button class="chat-toggle-btn" onclick="toggleChat()" aria-label="Sohbeti Aç">
             <i class="fa-solid fa-comment-dots"></i>
         </button>
 
-        <a href="https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/" class="getir-float-btn">
-    <i class="fa-solid fa-motorcycle"></i>
-    <span>Getir</span>
-</a>
-
-    <div class="chat-widget">
+        <a href="https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/" class="getir-float-btn" target="_blank" rel="noopener noreferrer" aria-label="Getir ile Sipariş Ver">
+            <i class="fa-solid fa-motorcycle"></i>
+            <span>Getir</span>
+        </a>
     </div>
 
     <script src="script.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PetStore",
+      "name": "Yumak Petshop",
+      "image": "https://yumakpetshop.online/logo.png",
+      "@id": "",
+      "url": "https://yumakpetshop.online",
+      "telephone": "+905469383481",
+      "priceRange": "₺₺",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Reşitpaşa caddesi. No:88/A",
+        "addressLocality": "Ümraniye",
+        "addressRegion": "İstanbul",
+        "postalCode": "34768",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.0256, 
+        "longitude": 29.0963
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/yumak__petshop/", 
+        "https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/"
+      ]
+    }
+    </script>
 </body>
 </html>

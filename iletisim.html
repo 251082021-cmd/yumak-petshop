@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim & Konum | Yumak Petshop</title>
     
+    <title>İletişim & Konum | Yumak Petshop Ümraniye</title>
+    <meta name="description" content="Ümraniye Yumak Petshop iletişim bilgileri, adres, telefon ve çalışma saatleri. Pet kuaför randevusu ve ürün siparişi için bize ulaşın.">
+    <link rel="canonical" href="https://yumakpetshop.online/iletisim.html" />
+    
+    <meta property="og:title" content="Bize Ulaşın | Yumak Petshop">
+    <meta property="og:description" content="Ümraniye'deki mağazamıza bekliyoruz. Yol tarifi ve iletişim için tıklayın.">
+    <meta property="og:url" content="https://yumakpetshop.online/iletisim.html">
+    <meta property="og:type" content="website">
+
     <link rel="icon" href="topbar1.jpg" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -14,102 +22,113 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img">
-                Yumak Petshop
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                    <img src="logo.png" alt="Yumak Petshop Logo" class="logo-img" width="50" height="50">
+                    <span>Yumak Petshop</span>
+                </a>
             </div>
             
-            <div class="hamburger" id="hamburgerBtn">
+            <div class="hamburger" id="hamburgerBtn" aria-label="Menüyü Aç">
                 <i class="fa-solid fa-bars"></i>
             </div>
 
             <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" onclick="closeMenu()">Ana Sayfa</a></li>
-    <li><a href="duyurular.html" onclick="closeMenu()">Duyurular</a></li>
-    <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
-    <li><a href="hizmetler.html" onclick="closeMenu()">Hizmetler & Ürünler</a></li>
-    <li><a href="iletisim.html" class="active" onclick="closeMenu()">İletişim & Konum</a></li>
-    
-</ul>
+                <li><a href="index.html" onclick="closeMenu()">Ana Sayfa</a></li>
+                <li><a href="duyurular.html" onclick="closeMenu()">Duyurular</a></li>
+                <li><a href="hakkimizda.html" onclick="closeMenu()">Hakkımızda</a></li>
+                <li><a href="hizmetler.html" onclick="closeMenu()">Hizmetler & Ürünler</a></li>
+                <li><a href="iletisim.html" class="active" onclick="closeMenu()">İletişim & Konum</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section class="hero page-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content reveal">
-            <h1>Bize Ulaşın</h1>
-            <p style="color: white;">Mağazamıza bekliyoruz!</p>
-        </div>
-    </section>
+    <main>
+        <section class="hero page-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content reveal">
+                <h1>Bize Ulaşın</h1>
+                <p style="color: white;">Mağazamıza bekliyoruz!</p>
+            </div>
+        </section>
 
-    <section class="contact-page-section">
-        
-        <div class="contact-info-box reveal">
-            <h3>İletişim Bilgileri</h3>
+        <section class="contact-page-section">
             
-            <div class="info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <p><strong>Adres:</strong><br>İstiklal, Reşit Paşa Cd. NO:88/A, 34773 Ümraniye/İstanbul</p>
+            <div class="contact-info-box reveal">
+                <h2>İletişim Bilgileri</h2>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <address style="font-style: normal;">
+                        <strong>Adres:</strong><br>
+                        İstiklal, Reşit Paşa Cd. NO:88/A, 34773 Ümraniye/İstanbul
+                    </address>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <p><strong>Mağaza Telefon:</strong><br><a href="tel:+905469383481">0546 938 34 81</a></p>
+                </div>
+
+                 <div class="info-item">
+                    <i class="fa-solid fa-scissors"></i>
+                    <p><strong>Pet Kuaför Randevu:</strong><br><a href="tel:+905067856746">0506 785 67 46</a></p>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <p><strong>Çalışma Saatleri:</strong><br>
+                    Hafta İçi: 09:00 - 21:00<br>
+                    Cumartesi: 09:00 - 21.00 <br>
+                    Pazar:     13:00 - 21:00</p>
+                </div>
+
+                <div class="whatsapp-container" style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+                    
+                    <a href="https://wa.me/905469383481?text=Merhaba,%20Petshop%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn primary-btn" 
+                       aria-label="Petshop WhatsApp Hattı"
+                       style="flex: 1; min-width: 140px; margin: 0; padding: 12px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background-color: #25D366; border-color: #25D366; text-decoration: none; color: white; font-size: 0.85rem; text-align: center;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+                        <span>Petshop<br>WhatsApp</span>
+                    </a>
+
+                    <a href="https://wa.me/905067856746?text=Merhaba,%20Pet%20Kuaför%20randevusu%20almak%20istiyorum." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn primary-btn" 
+                       aria-label="Pet Kuaför WhatsApp Hattı"
+                       style="flex: 1; min-width: 140px; margin: 0; padding: 12px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background-color: #128C7E; border-color: #128C7E; text-decoration: none; color: white; font-size: 0.85rem; text-align: center;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+                        <span>Pet Kuaför<br>WhatsApp</span>
+                    </a>
+
+                </div>
             </div>
 
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <p><strong>Telefon:</strong><br><a href="tel:05469383481">0546 938 34 81</a></p>
+            <div class="map-container reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d632.8896295754618!2d29.10317772400574!3d41.01327847556995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac96d370b6ddf%3A0xdbcbce76dfaee871!2sYUMAK%20PETSHOP!5e0!3m2!1str!2str!4v1771167103053!5m2!1str!2str" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    title="Yumak Petshop Konumu"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
-             <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <p><strong>Pet kuaför randevu</strong><br><a href="tel:05067856746">0506 785 67 46</a></p>
-            </div>
-
-
-            <div class="info-item">
-                <i class="fa-solid fa-clock"></i>
-                <p><strong>Çalışma Saatleri:</strong><br>
-                Hafta İçi: 09:00 - 21:00<br>
-                Cumartesi: 09:00 - 21.00 <br>
-                Pazar:     13:00 - 21:00</p>
-            </div>
-
-            <div class="whatsapp-container" style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
-    
-    <a href="https://wa.me/905469383481?text=Merhaba,%20Petshop%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." 
-       target="_blank" 
-       class="btn primary-btn" 
-       style="flex: 1; min-width: 140px; margin: 0; padding: 12px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background-color: #25D366; border-color: #25D366; text-decoration: none; color: white; font-size: 0.85rem; text-align: center;">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
-        <span>Petshop<br>WhatsApp</span>
-    </a>
-
-    <a href="https://wa.me/905067856746?text=Merhaba,%20Pet%20Kuaför%20randevusu%20almak%20istiyorum." 
-       target="_blank" 
-       class="btn primary-btn" 
-       style="flex: 1; min-width: 140px; margin: 0; padding: 12px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background-color: #128C7E; border-color: #128C7E; text-decoration: none; color: white; font-size: 0.85rem; text-align: center;">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
-        <span>Pet Kuaför<br>WhatsApp</span>
-    </a>
-
-</div>
-        </div>
-
-        
-
-        <div class="map-container reveal">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d632.8896295754618!2d29.10317772400574!3d41.01327847556995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac96d370b6ddf%3A0xdbcbce76dfaee871!2sYUMAK%20PETSHOP!5e0!3m2!1str!2str!4v1771167103053!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
             <h3>Yumak Petshop</h3>
             <p>Minik dostlarınızın konforu ve şıklığı için buradayız.</p>
             <div class="copyright" style="margin-top: 10px; border-top: 1px solid #5d4037; padding-top: 10px;">
-                <p>&copy; 2026 Yumak Petshop. Tüm Hakları Saklıdır.</p>
+                <p>© 2026 Yumak Petshop. Tüm Hakları Saklıdır.</p>
             </div>
         </div>
     </footer>
@@ -121,31 +140,68 @@
                     <i class="fa-solid fa-robot"></i>
                     <span>Asistan Lucy</span>
                 </div>
-                <button class="close-chat" onclick="toggleChat()">X</button>
+                <button class="close-chat" onclick="toggleChat()" aria-label="Sohbeti Kapat">X</button>
             </div>
             <div class="chat-body" id="chatBody">
                 <div class="message bot-message">
-                    Merhaba! 🐾 Ben Yumak Petshop asistanı Lucy. Kuaför randevusu, mama çeşitleri veya aksesuarlarımız hakkında size nasıl yardımcı olabilirim?                </div>
+                    Merhaba! 🐾 Ben Yumak Petshop asistanı Lucy. Kuaför randevusu, mama çeşitleri veya aksesuarlarımız hakkında size nasıl yardımcı olabilirim?
+                </div>
             </div>
             <div class="chat-footer">
                 <input type="text" id="chatInput" placeholder="Mesajınızı yazın..." onkeypress="handleKeyPress(event)">
-                <button id="sendBtn" onclick="sendMessage()">
+                <button id="sendBtn" onclick="sendMessage()" aria-label="Mesaj Gönder">
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
             </div>
         </div>
-        <button class="chat-toggle-btn" onclick="toggleChat()">
+        
+        <button class="chat-toggle-btn" onclick="toggleChat()" aria-label="Sohbeti Aç">
             <i class="fa-solid fa-comment-dots"></i>
         </button>
+
+        <a href="https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/" class="getir-float-btn" target="_blank" rel="noopener noreferrer" aria-label="Getir ile Sipariş">
+            <i class="fa-solid fa-motorcycle"></i>
+            <span>Getir</span>
+        </a>
     </div>
 
     <script src="script.js"></script>
-
-    <a href="https://getir.com/carsi/isletmeler/yumak-pet-shop-atakent-istanbul/" class="getir-float-btn">
-    <i class="fa-solid fa-motorcycle"></i>
-    <span>Getir</span>
-</a>
-
-    <div class="chat-widget">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PetStore",
+      "name": "Yumak Petshop",
+      "image": "https://yumakpetshop.online/logo.png",
+      "url": "https://yumakpetshop.online/iletisim.html",
+      "telephone": "+905469383481",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "İstiklal, Reşit Paşa Cd. NO:88/A",
+        "addressLocality": "Ümraniye",
+        "addressRegion": "İstanbul",
+        "postalCode": "34773",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.0256,
+        "longitude": 29.0963
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    }
+    </script>
 </body>
 </html>
